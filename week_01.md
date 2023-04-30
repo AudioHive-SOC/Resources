@@ -50,7 +50,7 @@ Press Ctrl + P in VSCode, then paste these one-by-one
 - [DevDocs](https://devdocs.io/html/)
 
 ### Assignments
-- Still thinking :(. Will update and notify on Slack.
+- Still thinking :(
 
 ---
 # MISC
