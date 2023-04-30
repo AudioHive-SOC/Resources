@@ -1,19 +1,30 @@
 # AudioHive
 ## Checkpoints
 Checkpoint-1: Git, Github, HTML, CSS, Javascript (2 weeks)
+
 Checkpoint-2: ReactJS + Backend-concepts (2 weeks)
+
 Checkpoint-3: NodeJS+ExpressJS, MongoDB+Mongoose (1 weeks)
+
 Checkpoint-4: Flutter (2 weeks)
+
 Checkpoint-5: AudioHive Project (3 weeks)
 
 ## Weekly Timeline
 Week 1: Basic HTML, CSS and Git/GitHub essentials
+
 Week 2: Learn Javascript
+
 Week 3: Learn ReactJS framework
+
 Week 4: Practice ReactJS + understanding backend fundamentals 
+
 Week 5: Learning NodeJS and ExpressJS frameworks, and using them with the Mongoose library for MongoDB
+
 Week 6: Learn Flutter Basics
+
 Week 7: Learning to use standard flutter packages for correct coding practices 
+
 Week 8-10: Apply all concepts and research on required libraries/frameworks to create AudioHive 
 
 ## Description
