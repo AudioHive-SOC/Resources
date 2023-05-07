@@ -39,6 +39,7 @@ Press Ctrl + P in VSCode, then paste these one-by-one
 
 ### Main Course
 - [HTML and CSS Videos](https://drive.google.com/drive/folders/1zuYlRdC2iflooOycEBsLekZN7a1f0hcv?usp=share_link)
+  - [Here](https://appbrewery.com/p/web-development-course-resources) are the resources referenced in the videos 
 
 ### Dessert
 - [What's in the head?](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML)
