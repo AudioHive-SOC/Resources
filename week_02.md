@@ -8,6 +8,7 @@
 ### Amateur
 - [Javascript Videos](https://drive.google.com/drive/folders/1zuYlRdC2iflooOycEBsLekZN7a1f0hcv?usp=share_link)
 (watch at 2x, a lot of simple syntax videos at the beginning)
+  - [Here](https://appbrewery.com/p/web-development-course-resources) are the resources referenced in the videos 
 
 ### Useful docs
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) 
