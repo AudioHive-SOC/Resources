@@ -21,4 +21,57 @@
 15. Follow the rest of the instructions on the Tailwind page ![Image](https://i.imgur.com/0UNXqoB.png)
 16. After step 6 in the tailwind installation docs, go to the `App.jsx` file, right click anywhere near the code lines and select `Format document with...` ![Image](https://i.imgur.com/crX3aok.png)
 17. Select the `Prettier - Code formatter` option. ![Image](https://i.imgur.com/b3lMc7T.png)
-18. This will format your code like this. Also, because of our previous setup, VSCode will autosave and autoformat the current file whenever you stop typing. ![Image](https://i.imgur.com/U1DFxDM.png)
+18. This will format your code like this. Also, because of our previous setup, VSCode will autosave and autoformat the current file whenever you stop typing. ![Image](https://i.imgur.com/U1DFxDM.png). 
+19. Finally, Press `Ctrl+J` to unhide the Powershell Window, then run `npm run dev` to start the React app. ![Image](https://i.imgur.com/aE1CECX.png)
+20. Here is the React app running on port `5173` ![Image](https://i.imgur.com/R7nVq3G.png)
+
+## NodeJS Project Structure
+1. First run the above react setup atleast once in your lifetime, since some instructions involve VSCode configuration, which will also be useful here.
+2. Create a new directory with the name of your nodejs project, say `backend`. Go inside it, then right click and select `Open with Code`. You can close Windows Explorer. ![Image](https://i.imgur.com/9rqbL4M.png) ![Image](https://i.imgur.com/Wp9qaCP.png)
+3. Use `Ctrl+J` to open a Powershell Window inside VSCode. Run `npm init -y` to initialize a project, with the `-y` flag meaning to use default settings. ![Image](https://i.imgur.com/usR7Wla.png)
+4. Now run `npm i express mongoose dotenv cors nodemon`. ![Image](https://i.imgur.com/7EL6tZR.png)
+5. Press `Ctrl+J` to hide the Powershell Window. Create a new file named `.gitignore`, and add the following lines in the file
+
+   ```gitignore
+   node_modules/
+   package-lock.json
+   .env
+   ```
+   Thus, git will ignore the `node_modules` folder, as well as the other 2 files. Such a configuration is already present when we create a react project using vite. 
+6. Close this file, and open `package.json` file. Below `"description": "",`, add this line `"type": "module",`. This will allow us to use the latest ES6 Javascript syntax. ![Image](https://i.imgur.com/YAXrHVh.png)
+7. In the `scripts` key, remove this line `"test": "echo \"Error: no test specified\" && exit 1"`. Instead, add this line `"dev": "nodemon index.js"`. This way, we can run the command `npm run dev`, which will actually run the command `nodemon index.js`. Since different projects may use different file structures, it's better to keep a common alias command like `npm run dev` or `npm start` to start the app. Close this file. ![Image](https://i.imgur.com/iHMmlVp.png)
+8. Create a new `index.js` file, and copy this boilerplate code. 
+
+   ```javascript
+   import express from "express";
+   import cors from "cors";
+   import dotenv from "dotenv";
+
+   dotenv.config(); // without this line, process.env on line 22 will be undefined, thus you won't be able to read the .env file
+   const app = express();
+   app.use(express.json());
+   app.use(cors());
+
+   app.get("/hey", (req, res) => {
+   	return res.status(200).send("hi");
+   });
+
+   app.get("/getData", (req, res) => {
+   	const data = [
+   		{ city: "Mumbai", temperature: 30 },
+   		{ city: "Delhi", temperature: 25 },
+   	];
+   	return res.status(200).json(data);
+   });
+
+   const port = process.env.PORT || 5001;
+   // in the .env file, we used PORT = 5000, but in case that variable is undefined in the .env file, use port 5001
+
+   app.listen(port, () => console.log(`SERVER: ${port}`));
+   // just a formality, print SERVER: port when server starts
+   ```
+
+9. Create a new `.env` file. Here, you can store any secret variables like API keys, MONGODB_URI, hash secrets, payment salts, etc. Remember that this `.env` file will be ignored by git, so it's your responsibility to keep a local backup of this file in case of data loss. 
+Define the following variable in this file `PORT = 5000` ![Image](https://i.imgur.com/qiVZVQK.png)
+10. Finally, press `Ctrl+J` to unhide the Powershell Window and run your code using `npm run dev`. ![Image](https://i.imgur.com/uk0j1SF.png)
+11. Here are the 2 APIs we made in the boilerplate code. ![Image](https://i.imgur.com/WOfbEU4.png) ![Image](https://i.imgur.com/M8W9i2g.png) 
